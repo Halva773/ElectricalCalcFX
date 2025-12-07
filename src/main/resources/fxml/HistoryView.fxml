@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.electrical.controller.HistoryController"
+            styleClass="main-container">
+
+    <!-- Верхняя панель -->
+    <top>
+        <HBox styleClass="header-panel" alignment="CENTER_LEFT" spacing="20">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+            <Button fx:id="backButton" 
+                    text="← Назад" 
+                    onAction="#handleBack" 
+                    styleClass="back-button"/>
+            <Label text="История расчётов" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="totalLabel" styleClass="total-label"/>
+        </HBox>
+    </top>
+
+    <!-- Центральная часть -->
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- Панель фильтров -->
+            <HBox styleClass="filter-panel" spacing="20" alignment="CENTER_LEFT">
+                <padding>
+                    <Insets top="10" right="15" bottom="10" left="15"/>
+                </padding>
+
+                <Label text="Фильтр:" styleClass="filter-label"/>
+                <ComboBox fx:id="typeFilterCombo" styleClass="filter-combo" prefWidth="180"/>
+
+                <CheckBox fx:id="allUsersCheck" text="Показать всех пользователей"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button fx:id="refreshButton" 
+                        text="🔄 Обновить" 
+                        onAction="#handleRefresh" 
+                        styleClass="refresh-button"/>
+                <Button fx:id="deleteButton" 
+                        text="🗑 Удалить" 
+                        onAction="#handleDelete" 
+                        styleClass="delete-button"/>
+                <Button fx:id="clearButton" 
+                        text="Очистить историю" 
+                        onAction="#handleClear" 
+                        styleClass="clear-button"/>
+            </HBox>
+
+            <!-- Таблица истории -->
+            <TableView fx:id="historyTable" VBox.vgrow="ALWAYS" styleClass="history-table">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="dateColumn" text="Дата и время" prefWidth="150"/>
+                    <TableColumn fx:id="typeColumn" text="Тип расчёта" prefWidth="150"/>
+                    <TableColumn fx:id="inputColumn" text="Входные параметры" prefWidth="250"/>
+                    <TableColumn fx:id="resultColumn" text="Результат" prefWidth="300"/>
+                    <TableColumn fx:id="userColumn" text="Пользователь" prefWidth="120"/>
+                </columns>
+                <placeholder>
+                    <Label text="История расчётов пуста" styleClass="placeholder-text"/>
+                </placeholder>
+            </TableView>
+
+            <!-- Статусная строка -->
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="statusLabel" styleClass="status-label"/>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>
+
+

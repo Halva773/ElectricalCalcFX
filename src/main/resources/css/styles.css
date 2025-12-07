@@ -1,0 +1,581 @@
+/*
+ * Electrical Calculator FX - Стили приложения
+ * Цветовая схема: электрическая тематика (синий, оранжевый, тёмный)
+ */
+
+/* ===== Базовые цвета и шрифты ===== */
+:root {
+    -fx-primary-color: #1E3A5F;
+    -fx-accent-color: #F39C12;
+    -fx-accent-2: #3498DB;
+    -fx-text-color: #2C3E50;
+    -fx-muted: #7F8C8D;
+    -fx-card-bg: white;
+    -fx-shadow: dropshadow(gaussian, rgba(0,0,0,0.12), 16, 0, 0, 6);
+}
+
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* ===== Фон экранов авторизации ===== */
+.auth-background {
+    -fx-background-color: linear-gradient(to bottom right, #1E3A5F, #2C5F8A, #3498DB);
+    -fx-padding: 40 24 40 24;
+}
+
+/* ===== Карточки ===== */
+.auth-card {
+    -fx-background-color: -fx-card-bg;
+    -fx-background-radius: 12px;
+    -fx-effect: -fx-shadow;
+    -fx-min-width: 340px;
+    -fx-max-width: 380px;
+}
+
+/* ===== Заголовки ===== */
+.app-icon {
+    -fx-font-size: 56px;
+    -fx-text-fill: -fx-accent-color;
+}
+
+.auth-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.auth-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #E8F4FD;
+}
+
+.form-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-text-color;
+}
+
+.hint-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: -fx-muted;
+}
+
+/* ===== Поля ввода ===== */
+.input-field {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 8px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px 15px;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #95A5A6;
+}
+
+.input-field:focused {
+    -fx-background-color: white;
+    -fx-border-color: -fx-accent-color;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(243, 156, 18, 0.3), 10, 0, 0, 0);
+}
+
+.value-field {
+    -fx-background-color: white;
+    -fx-background-radius: 6px;
+    -fx-border-color: #DEE2E6;
+    -fx-border-radius: 6px;
+    -fx-padding: 8px 12px;
+}
+
+.value-field:focused {
+    -fx-border-color: #3498DB;
+    -fx-border-width: 2px;
+}
+
+.value-field:disabled {
+    -fx-background-color: #F0F0F0;
+    -fx-opacity: 0.7;
+}
+
+/* ========== Кнопки ========== */
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #F5B041, #F39C12);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 30px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #F8C471, #F5B041);
+    -fx-effect: dropshadow(gaussian, rgba(243, 156, 18, 0.4), 10, 0, 0, 3);
+}
+
+.primary-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #D68910, #B9770E);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0, 0, 1);
+}
+
+.secondary-button {
+    -fx-background-color: white;
+    -fx-text-fill: -fx-text-color;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 6px;
+    -fx-border-color: #DEE2E6;
+    -fx-border-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #F8F9FA;
+    -fx-border-color: #3498DB;
+}
+
+.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-accent-color;
+    -fx-font-size: 13px;
+    -fx-underline: true;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+
+.link-button:hover {
+    -fx-text-fill: #F5B041;
+}
+
+/* Прежний back-button не используется на экране входа/регистрации */
+
+.logout-button {
+    -fx-background-color: rgba(231, 76, 60, 0.8);
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.logout-button:hover {
+    -fx-background-color: #E74C3C;
+}
+
+.card-button {
+    -fx-background-color: linear-gradient(to bottom, #3498DB, #2980B9);
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 25px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.card-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #5DADE2, #3498DB);
+}
+
+.save-button {
+    -fx-background-color: #27AE60;
+    -fx-text-fill: white;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.save-button:hover {
+    -fx-background-color: #2ECC71;
+}
+
+.save-button:disabled {
+    -fx-background-color: #BDC3C7;
+    -fx-opacity: 0.7;
+}
+
+.delete-button {
+    -fx-background-color: #E74C3C;
+    -fx-text-fill: white;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.delete-button:hover {
+    -fx-background-color: #C0392B;
+}
+
+.delete-button:disabled {
+    -fx-background-color: #BDC3C7;
+}
+
+.clear-button {
+    -fx-background-color: #95A5A6;
+    -fx-text-fill: white;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.clear-button:hover {
+    -fx-background-color: #7F8C8D;
+}
+
+.refresh-button {
+    -fx-background-color: #3498DB;
+    -fx-text-fill: white;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.refresh-button:hover {
+    -fx-background-color: #2980B9;
+}
+
+/* ========== Лейблы сообщений ========== */
+.error-label {
+    -fx-text-fill: #E74C3C;
+    -fx-font-size: 12px;
+    -fx-padding: 8px;
+    -fx-background-color: rgba(231, 76, 60, 0.1);
+    -fx-background-radius: 4px;
+}
+
+.success-label {
+    -fx-text-fill: #27AE60;
+    -fx-font-size: 12px;
+    -fx-padding: 8px;
+    -fx-background-color: rgba(39, 174, 96, 0.1);
+    -fx-background-radius: 4px;
+}
+
+.status-label {
+    -fx-text-fill: #7F8C8D;
+    -fx-font-size: 12px;
+}
+
+/* ========== Заголовочная панель ========== */
+.header-panel {
+    -fx-background-color: linear-gradient(to right, #1E3A5F, #2C5F8A);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 3);
+}
+
+.header-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.welcome-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+}
+
+.role-text {
+    -fx-font-size: 11px;
+    -fx-text-fill: #B8D4E8;
+}
+
+.formula-hint {
+    -fx-font-size: 14px;
+    -fx-font-family: "Consolas", monospace;
+    -fx-text-fill: #F39C12;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 4px;
+}
+
+/* ========== Подвал ========== */
+.footer-panel {
+    -fx-background-color: #2C3E50;
+}
+
+.footer-text {
+    -fx-font-size: 11px;
+    -fx-text-fill: #95A5A6;
+}
+
+/* ========== Карточки меню ========== */
+.menu-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+.menu-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 15, 0, 0, 5);
+    -fx-cursor: hand;
+    -fx-min-width: 220px;
+    -fx-max-width: 250px;
+}
+
+.menu-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.3), 20, 0, 0, 8);
+    -fx-translate-y: -5;
+}
+
+.card-icon {
+    -fx-font-size: 48px;
+    -fx-text-fill: #3498DB;
+}
+
+.card-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+.card-description {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7F8C8D;
+}
+
+/* ========== Панели калькулятора ========== */
+.input-panel, .result-panel, .results-panel, .schema-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 10, 0, 0, 3);
+}
+
+.panel-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+    -fx-padding: 0 0 10px 0;
+    -fx-border-color: transparent transparent #E8E8E8 transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.param-box {
+    -fx-background-color: #F8F9FA;
+    -fx-background-radius: 8px;
+    -fx-padding: 12px;
+}
+
+.result-box {
+    -fx-background-color: linear-gradient(to bottom right, #E8F6FF, #F0F9FF);
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+}
+
+.result-value {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27AE60;
+}
+
+.formula-text {
+    -fx-font-size: 14px;
+    -fx-font-family: "Consolas", monospace;
+    -fx-text-fill: #2C3E50;
+}
+
+.power-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7F8C8D;
+}
+
+/* ========== Диаграмма закона Ома ========== */
+.ohm-diagram {
+    -fx-background-color: #F8F9FA;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+}
+
+.diagram-title {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7F8C8D;
+}
+
+.ohm-triangle {
+    -fx-font-size: 24px;
+    -fx-font-family: "Consolas", monospace;
+    -fx-text-fill: #3498DB;
+    -fx-text-alignment: center;
+}
+
+/* ========== ComboBox ========== */
+.combo-box, .unit-combo, .input-combo, .filter-combo {
+    -fx-background-color: white;
+    -fx-background-radius: 6px;
+    -fx-border-color: #DEE2E6;
+    -fx-border-radius: 6px;
+    -fx-padding: 5px;
+}
+
+.combo-box:focused, .unit-combo:focused {
+    -fx-border-color: #3498DB;
+}
+
+.combo-box .list-cell, .unit-combo .list-cell {
+    -fx-padding: 5px 10px;
+}
+
+/* ========== CheckBox ========== */
+.check-box {
+    -fx-font-size: 13px;
+    -fx-text-fill: #2C3E50;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #DEE2E6;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #3498DB;
+    -fx-border-color: #3498DB;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+/* ========== Таблицы ========== */
+.table-view, .results-table, .history-table {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #E8E8E8;
+    -fx-border-radius: 8px;
+}
+
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom, #F8F9FA, #E8E8E8);
+    -fx-padding: 10px;
+    -fx-font-weight: bold;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #2C3E50;
+    -fx-font-size: 12px;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F0F0F0 transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #FAFBFC;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #E3F2FD;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #F0F7FF;
+}
+
+.table-cell {
+    -fx-padding: 8px 10px;
+    -fx-font-size: 12px;
+}
+
+.placeholder-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #95A5A6;
+}
+
+/* ========== Панель фильтров ========== */
+.filter-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0, 0, 2);
+}
+
+.filter-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+.total-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7F8C8D;
+}
+
+/* ========== Схема делителя ========== */
+.circuit-canvas {
+    -fx-background-color: #F8F9FA;
+}
+
+.schema-info {
+    -fx-font-size: 11px;
+    -fx-text-fill: #2C3E50;
+    -fx-background-color: #F0F4F8;
+    -fx-padding: 10px;
+    -fx-background-radius: 6px;
+}
+
+/* ========== Separator ========== */
+.separator {
+    -fx-padding: 10px 0;
+}
+
+.separator .line {
+    -fx-border-color: #E8E8E8;
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* ========== ScrollBar ========== */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #CED4DA;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #ADB5BD;
+}
+
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow {
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+
+/* ========== ProgressIndicator ========== */
+.progress-indicator {
+    -fx-progress-color: #3498DB;
+}
+
+/* ========== Tooltip ========== */
+.tooltip {
+    -fx-background-color: #2C3E50;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 8px 12px;
+    -fx-background-radius: 4px;
+}
+
+/* ========== Alert Dialog ========== */
+.alert .dialog-pane {
+    -fx-background-color: white;
+}
+
+.alert .dialog-pane .header-panel {
+    -fx-background-color: #F8F9FA;
+}
+
+.alert .dialog-pane .content {
+    -fx-padding: 20px;
+}
+
+.alert .button-bar .button {
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 20px;
+}
+

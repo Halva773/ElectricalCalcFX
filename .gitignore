@@ -1,0 +1,34 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# IDE
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+.vscode/
+
+# OS / temp
+*.log
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Java / tooling
+hs_err_pid*
+replay_pid*
+
+# Local DB / app files
+electrical_calc.db
+
+# Cursor / workspace metadata
+.cursor/
+
+

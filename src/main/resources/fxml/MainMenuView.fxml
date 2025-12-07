@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.electrical.controller.MainMenuController"
+            styleClass="main-container">
+
+    <!-- Верхняя панель -->
+    <top>
+        <HBox styleClass="header-panel" alignment="CENTER_LEFT" spacing="20">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+            <Label text="⚡ Electrical Calculator" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <VBox alignment="CENTER_RIGHT">
+                <Label fx:id="welcomeLabel" styleClass="welcome-text"/>
+                <Label fx:id="roleLabel" styleClass="role-text"/>
+            </VBox>
+            <Button fx:id="logoutButton" 
+                    text="Выход" 
+                    onAction="#handleLogout" 
+                    styleClass="logout-button"/>
+        </HBox>
+    </top>
+
+    <!-- Центральная часть с меню -->
+    <center>
+        <VBox alignment="CENTER" spacing="30">
+            <padding>
+                <Insets top="50" right="50" bottom="50" left="50"/>
+            </padding>
+
+            <Label text="Выберите калькулятор" styleClass="menu-title"/>
+
+            <HBox alignment="CENTER" spacing="30">
+                <!-- Карточка калькулятора закона Ома -->
+                <VBox styleClass="menu-card" alignment="CENTER" spacing="15" 
+                      onMouseClicked="#handleOhmCalculator">
+                    <padding>
+                        <Insets top="30" right="30" bottom="30" left="30"/>
+                    </padding>
+                    <Label text="Ω" styleClass="card-icon"/>
+                    <Label text="Закон Ома" styleClass="card-title"/>
+                    <Label text="Расчёт напряжения, тока&#10;и сопротивления" 
+                           styleClass="card-description" textAlignment="CENTER"/>
+                    <Button fx:id="ohmCalculatorButton" 
+                            text="Открыть" 
+                            onAction="#handleOhmCalculator" 
+                            styleClass="card-button"/>
+                </VBox>
+
+                <!-- Карточка делителя напряжения -->
+                <VBox styleClass="menu-card" alignment="CENTER" spacing="15"
+                      onMouseClicked="#handleVoltageDivider">
+                    <padding>
+                        <Insets top="30" right="30" bottom="30" left="30"/>
+                    </padding>
+                    <Label text="⎓" styleClass="card-icon"/>
+                    <Label text="Делитель напряжения" styleClass="card-title"/>
+                    <Label text="Подбор резисторов&#10;для делителя" 
+                           styleClass="card-description" textAlignment="CENTER"/>
+                    <Button fx:id="voltageDividerButton" 
+                            text="Открыть" 
+                            onAction="#handleVoltageDivider" 
+                            styleClass="card-button"/>
+                </VBox>
+
+                <!-- Карточка истории -->
+                <VBox styleClass="menu-card" alignment="CENTER" spacing="15"
+                      onMouseClicked="#handleHistory">
+                    <padding>
+                        <Insets top="30" right="30" bottom="30" left="30"/>
+                    </padding>
+                    <Label text="📋" styleClass="card-icon"/>
+                    <Label text="История" styleClass="card-title"/>
+                    <Label text="Просмотр истории&#10;расчётов" 
+                           styleClass="card-description" textAlignment="CENTER"/>
+                    <Button fx:id="historyButton" 
+                            text="Открыть" 
+                            onAction="#handleHistory" 
+                            styleClass="card-button"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Нижняя панель -->
+    <bottom>
+        <HBox styleClass="footer-panel" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Electrical Calculator FX v1.0 | Java 21 + JavaFX + SQLite" 
+                   styleClass="footer-text"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+
+

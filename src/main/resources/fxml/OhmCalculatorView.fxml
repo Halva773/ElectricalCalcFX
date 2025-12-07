@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.electrical.controller.OhmCalculatorController"
+            styleClass="main-container">
+
+    <!-- Верхняя панель -->
+    <top>
+        <HBox styleClass="header-panel" alignment="CENTER_LEFT" spacing="20">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+            <Button fx:id="backButton" 
+                    text="← Назад" 
+                    onAction="#handleBack" 
+                    styleClass="back-button"/>
+            <Label text="Калькулятор закона Ома" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="V = I × R" styleClass="formula-hint"/>
+        </HBox>
+    </top>
+
+    <!-- Центральная часть -->
+    <center>
+        <HBox alignment="CENTER" spacing="40">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+
+            <!-- Панель ввода -->
+            <VBox styleClass="input-panel" spacing="20" alignment="TOP_CENTER" minWidth="350">
+                <padding>
+                    <Insets top="25" right="25" bottom="25" left="25"/>
+                </padding>
+
+                <Label text="Входные параметры" styleClass="panel-title"/>
+                <Label text="Выберите два известных параметра" styleClass="hint-text"/>
+
+                <!-- Напряжение -->
+                <VBox spacing="8" styleClass="param-box">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <CheckBox fx:id="voltageKnownCheck" text="Напряжение (V)"/>
+                    </HBox>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <TextField fx:id="voltageField" 
+                                   promptText="Значение" 
+                                   styleClass="value-field"
+                                   prefWidth="150"/>
+                        <ComboBox fx:id="voltageUnitCombo" 
+                                  styleClass="unit-combo"
+                                  prefWidth="80"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Ток -->
+                <VBox spacing="8" styleClass="param-box">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <CheckBox fx:id="currentKnownCheck" text="Ток (I)"/>
+                    </HBox>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <TextField fx:id="currentField" 
+                                   promptText="Значение" 
+                                   styleClass="value-field"
+                                   prefWidth="150"/>
+                        <ComboBox fx:id="currentUnitCombo" 
+                                  styleClass="unit-combo"
+                                  prefWidth="80"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Сопротивление -->
+                <VBox spacing="8" styleClass="param-box">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <CheckBox fx:id="resistanceKnownCheck" text="Сопротивление (R)"/>
+                    </HBox>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <TextField fx:id="resistanceField" 
+                                   promptText="Значение" 
+                                   styleClass="value-field"
+                                   prefWidth="150"/>
+                        <ComboBox fx:id="resistanceUnitCombo" 
+                                  styleClass="unit-combo"
+                                  prefWidth="80"/>
+                    </HBox>
+                </VBox>
+
+                <Label fx:id="errorLabel" styleClass="error-label" wrapText="true"/>
+
+                <!-- Кнопки -->
+                <HBox spacing="15" alignment="CENTER">
+                    <Button fx:id="calculateButton" 
+                            text="Рассчитать" 
+                            onAction="#handleCalculate" 
+                            styleClass="primary-button"
+                            prefWidth="120"/>
+                    <Button fx:id="clearButton" 
+                            text="Очистить" 
+                            onAction="#handleClear" 
+                            styleClass="secondary-button"
+                            prefWidth="120"/>
+                </HBox>
+            </VBox>
+
+            <!-- Панель результатов -->
+            <VBox fx:id="resultBox" styleClass="result-panel" spacing="20" alignment="TOP_CENTER" minWidth="350">
+                <padding>
+                    <Insets top="25" right="25" bottom="25" left="25"/>
+                </padding>
+
+                <Label text="Результат" styleClass="panel-title"/>
+
+                <VBox spacing="15" styleClass="result-box">
+                    <Label fx:id="resultLabel" styleClass="result-value" wrapText="true"/>
+                    <Separator/>
+                    <Label fx:id="formulaLabel" styleClass="formula-text" wrapText="true"/>
+                    <Separator/>
+                    <Label fx:id="powerLabel" styleClass="power-text" wrapText="true"/>
+                </VBox>
+
+                <!-- Схема закона Ома -->
+                <VBox alignment="CENTER" spacing="10" styleClass="ohm-diagram">
+                    <Label text="Треугольник закона Ома" styleClass="diagram-title"/>
+                    <Label text="    V    &#10;  ─────  &#10;  I × R  " 
+                           styleClass="ohm-triangle"/>
+                </VBox>
+            </VBox>
+        </HBox>
+    </center>
+
+</BorderPane>
+
+
