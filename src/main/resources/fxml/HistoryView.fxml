@@ -46,11 +46,11 @@
                 <Region HBox.hgrow="ALWAYS"/>
 
                 <Button fx:id="refreshButton" 
-                        text="🔄 Обновить" 
+                        text="Обновить"
                         onAction="#handleRefresh" 
                         styleClass="refresh-button"/>
                 <Button fx:id="deleteButton" 
-                        text="🗑 Удалить" 
+                        text="Удалить"
                         onAction="#handleDelete" 
                         styleClass="delete-button"/>
                 <Button fx:id="clearButton" 

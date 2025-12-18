@@ -16,7 +16,7 @@
                 <Insets top="15" right="20" bottom="15" left="20"/>
             </padding>
             <Button fx:id="backButton" 
-                    text="← Назад" 
+                    text="Назад"
                     onAction="#handleBack" 
                     styleClass="back-button"/>
             <Label text="Калькулятор закона Ома" styleClass="header-title"/>

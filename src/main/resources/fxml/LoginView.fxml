@@ -11,8 +11,8 @@
 
     <VBox alignment="CENTER" spacing="20">
         <VBox alignment="CENTER" spacing="6">
-            <Label text="⚡" styleClass="app-icon"/>
-            <Label text="Electrical Calculator" styleClass="auth-title"/>
+            <Label text="Хазанова ИД23-3" styleClass="app-icon"/>
+            <Label text="Calculator" styleClass="auth-title"/>
             <Label text="Вход в систему" styleClass="auth-subtitle"/>
         </VBox>
 

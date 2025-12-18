@@ -15,7 +15,7 @@
             <padding>
                 <Insets top="15" right="20" bottom="15" left="20"/>
             </padding>
-            <Label text="⚡ Electrical Calculator" styleClass="header-title"/>
+            <Label text="Calculator" styleClass="header-title"/>
             <Region HBox.hgrow="ALWAYS"/>
             <VBox alignment="CENTER_RIGHT">
                 <Label fx:id="welcomeLabel" styleClass="welcome-text"/>
